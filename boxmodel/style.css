@@ -1,0 +1,38 @@
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: aquamarine;
+}
+body{
+    background-color: white;
+    /* margin: 0px; */
+}
+.highlight{
+    background-color: white;
+    /* font-size: 60px; */
+}
+.perry{
+    width: 200px;
+}
+.imageBox{
+    border-style: solid;
+    border-color: orangered;
+    padding: 30px;
+    margin: 10px;
+    margin-left: 80px;
+    background-color: lavender;
+}
+.AgentP{
+    width: 200px;
+}
+.secondDiv{
+    background-color: royalblue;
+    position: absolute;
+    top: 800px;
+    left: 400px;
+}
+.fourthDiv{
+    background-color: green;
+    position: fixed;
+    top: 400px;
+    left: 400px;
+}

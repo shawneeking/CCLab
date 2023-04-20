@@ -1,0 +1,15 @@
+body{
+    background-color: aquamarine;
+}
+p{
+    font-size: 14px;
+    color: orange;
+}
+.whitebackground{
+    background-color: white;
+    color: black;
+}
+.specialLetter{
+    background-color: pink;
+    color: white;
+}
