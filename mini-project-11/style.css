@@ -77,3 +77,6 @@ a:visited{
 a:hover {
     color: orange;
 }
+a:active{
+    color: white;
+}
