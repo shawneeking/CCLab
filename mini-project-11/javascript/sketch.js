@@ -23,9 +23,9 @@ function setup() {
     bgstars[i] = new bgStar(random(width), random(height));
   }
   BHX = width / (random(1, 4));
-  BHY = height /(random(1, 4));
+  BHY = height / (random(1, 4));
   BHS = 80;
-  blackhole = new Star(BHX - BHS/2, BHY - BHS/2, BHS);
+  blackhole = new Star(BHX - BHS / 2, BHY - BHS / 2, BHS);
   origin = new Origin(width / 2, height / 2);
   for (let i = 0; i < numStars; i++) {
     stars.push(new Star(random(0, width), random(0, height), random(20, 50)));
@@ -82,7 +82,7 @@ function draw() {
   }
 
   if (scene == 3) {
-    
+
     for (let i = 0; i < stars.length; i++) {
       stars[i].display();
       stars[i].update();
@@ -93,11 +93,11 @@ function draw() {
         stars.splice(i, 1);
       }
     }
-    if(bgstar == true){
-      if(stars.length < numStars){
+    if (bgstar == true) {
+      if (stars.length < numStars) {
         for (let i = 0; i < 1; i++) {
-        stars.push(new Star(random(0, width), random(0, height), random(20, 50)));
-      }
+          stars.push(new Star(random(0, width), random(0, height), random(20, 50)));
+        }
       }
     }
     blackhole.blackhole();
@@ -179,7 +179,7 @@ class Star {
     pop();
   }
   blackhole() {
-  
+
     textAlign(CENTER);
     textSize(30);
     stroke(245, 112, 2);
@@ -209,7 +209,7 @@ class Star {
       if (other.x - this.x < 0 || other.y - this.y > 0) {
         this.x += (other.x - this.x) / 90;
         this.y += (other.y - this.y) / 90;
-  
+
       }
       if (other.x - this.x > 0 || other.y - this.y > 0) {
         this.x += (other.x - this.x) / 90;
@@ -240,18 +240,18 @@ class Star {
 
   update(other) {
     this.x += this.xSpeed;
-    if (this.x - this.size/2 > width || this.x + this.size/2 < 0) {
+    if (this.x - this.size / 2 > width || this.x + this.size / 2 < 0) {
       this.onCanvas = false;
     }
     this.y += this.ySpeed;
-    if (this.y - this.size/2 > height || this.y + this.size/2 < 0) {
+    if (this.y - this.size / 2 > height || this.y + this.size / 2 < 0) {
       this.onCanvas = false;
     }
     if (scene == 5) {
       this.clickedOn = false;
       other.size = 80;
-      other.x = width/random(1,4) - other.size/2;
-      other.y = height/random(1,4) - other.size/2;
+      other.x = width / random(1, 4) - other.size / 2;
+      other.y = height / random(1, 4) - other.size / 2;
     }
   }
 }
