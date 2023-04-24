@@ -72,7 +72,7 @@ a:link {
     color: white;
 }
 a:visited{
-    color: none;
+    color: white;
 }
 a:hover {
     color: orange;
