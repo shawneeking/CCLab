@@ -1,0 +1,76 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    text-align: center;
+    font-family: 'Comic Neue';
+    font-size: 80px;
+}
+
+.heading2 {
+    text-align: center;
+    font-family: 'Comic Neue';
+    font-size: 40px;
+}
+
+.paragraph {
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    font-family: 'Comic Neue';
+    font-size: 24px;
+}
+
+#canvasContainer {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+    /* max-width: 1200px; */
+}
+
+#canvasContainer canvas {
+    width: 100% !important;
+    height: 100% !important
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+}
+
+.button1 {
+    position: absolute;
+    left: 45%;
+    transform: translateX(-50%);
+    top: 70%;
+    transform: translateY(-50%);
+}
+
+#container {
+    margin: 20px;
+    width: 400px;
+    height: 8px;
+    position: relative;
+}
+
+.linkBox {
+    text-align: center;
+    font-family: 'Comic Neue';
+}
+.images{
+    width: 50%;
+}
+.imageGrid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+.imageBox{
+    padding: 10px;
+    text-align: center;
+}
