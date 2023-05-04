@@ -63,7 +63,7 @@ body {
     font-family: 'Comic Neue';
 }
 .images{
-    width: 50%;
+    width: 200px;
 }
 .imageGrid{
     display: grid;
@@ -73,4 +73,30 @@ body {
 .imageBox{
     padding: 10px;
     text-align: center;
+}
+.myDiv{
+	display:none;
+    text-align:center;
+}  
+.myDiv img{
+  margin: 0 auto;
+}
+.myDiv span{
+	text-align: center;
+    /* padding: 6px 10px; */
+    display: block;
+    width: 100px;
+    margin: auto;
+}
+#showAnteater{
+	color:red;
+    /* padding:10px; */
+}
+#showMonkey{
+    color: green;
+    /* padding:10px; */
+}
+#showCat{
+	color:blue;
+    /* padding:10px; */
 }

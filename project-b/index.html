@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="p5-template/p5.js"></script>
   <script src="p5-template/p5.sound.js"></script>
+  <script src="jquery-3.6.4.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Comic+Neue&display=swap" rel="stylesheet">
@@ -21,16 +22,50 @@
   <p class="paragraph">this is where you can see capybaras with everything elsethis is where you can see capybaras with
     everything elsethis is where you can see capybaras with everything elsethis is where you can see capybaras with
     everything elsethis is where you can see capybaras with everything else </p>
-  <!-- <button class="button1" onclick="start()">click for circle</button> -->
   <div class="wrapper">
 
     <div id="canvasContainer">
       <script class="p5" src="sketch.js"></script>
       <button class="button1" onclick="start()">click to see compatibility</button>
+      <select id="myselection">
+        <option>Select Option</option>
+        <option value="Anteater">Anteater</option>
+        <option value="Monkey">Monkey</option>
+        <option value="Cat">Cat</option>
+      </select>
+      <div id="showAnteater" class="myDiv">
+        <img class="images" src="capybaras/anteater.png" alt="Anteater" /><span>Anteater</span>
+      </div>
+      <div id="showMonkey" class="myDiv">
+        <img class="images" src="capybaras/monkey.jpg" alt="Monkey" /><span>Monkey</span>
+      </div>
+      <div id="showCat" class="myDiv">
+        <img class="images" src="capybaras/cat.jpg" alt="Cat" /><span>Cat</span>
+      </div>
+      <script>
+        $(document).ready(function () {
+          $('#myselection').on('change', function () {
+            var demovalue = $(this).val();
+            $("div.myDiv").hide();
+            $("#show" + demovalue).show();
+          });
+        });
+      </script>
+      <script>
+        $(document).ready(function () {
+          $('#myselection').on('change', function () {
+            var demovalue = $(this).val();
+            $("div.myDiv").hide();
+            $("#show" + demovalue).show();
+          });
+        });
+      </script>
       <div id="container"></div>
     </div>
   </div>
-<div id="linkBox"><p class="paragraph">click <a href="capybara.html">here</a> to see all of my pictures!</p></div>
+  <div id="linkBox">
+    <p class="paragraph">click <a href="capybara.html">here</a> to see all of my pictures!</p>
+  </div>
 
 
 
