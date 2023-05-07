@@ -2,6 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 .heading {
@@ -16,7 +17,13 @@ body {
     font-size: 40px;
 }
 
+#Header {
+    width: 100%;
+    height: 100vh;
+}
+
 .paragraph {
+    text-align: center;
     padding-top: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -28,6 +35,7 @@ body {
 #canvasContainer {
     position: relative;
     width: 100%;
+    height: 80vh;
     margin: auto;
     display: inline-block;
     /* max-width: 1200px; */
@@ -43,7 +51,9 @@ body {
     margin: auto;
 }
 
-.button1 {
+#button1 {
+    display: inline-block;
+    font-family: 'Comic Neue';
     position: absolute;
     left: 45%;
     transform: translateX(-50%);
@@ -62,41 +72,79 @@ body {
     text-align: center;
     font-family: 'Comic Neue';
 }
-.images{
-    width: 200px;
+
+.images {
+    width: 400px;
+    height: 267px;
 }
-.imageGrid{
+
+.imageGrid {
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 10px;
 }
-.imageBox{
+
+.imageBox {
     padding: 10px;
     text-align: center;
 }
-.myDiv{
-	display:none;
-    text-align:center;
-}  
+
+#myselection {
+    position: absolute;
+    font-family: 'Comic Neue';
+    display: inline-block;
+    margin-left: 76%;
+    margin-top: 33%;
+}
+
+.myDiv {
+    display: none;
+    position: absolute;
+    margin-left: 67%;
+    margin-top: 10%;
+}
 .myDiv img{
-  margin: 0 auto;
+    display: inline-block;
 }
-.myDiv span{
-	text-align: center;
-    /* padding: 6px 10px; */
-    display: block;
-    width: 100px;
-    margin: auto;
+#capybaraPic {
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+    top: 25%;
+    left: 5%;
 }
-#showAnteater{
-	color:red;
-    /* padding:10px; */
+#results{
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
-#showMonkey{
-    color: green;
-    /* padding:10px; */
+.myDiv2{
+    position: absolute;
+    left: 37%;
 }
-#showCat{
-	color:blue;
-    /* padding:10px; */
+#resultLink{
+    visibility: hidden;
+    height: 20vh;
+    left: 50%;
+}
+#selectBox{
+    display: inline-block;
+}
+.rotate{
+   animation: rotation 8.5s 0s linear;
+   transition: 2s;
+   -webkit-transition: 2s;
+   -moz-transition: 2s;
+}
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(740deg);
+    }
+}
+.resultP{
+    top: 0;
+    text-align: center;
 }
