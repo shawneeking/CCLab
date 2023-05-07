@@ -124,7 +124,6 @@ class Heart {
 
 }
 function playAudio(){
- 
     a = document.getElementById("lowpercenta").classList.contains("lowPercent");
     b = document.getElementById("lowpercentb").classList.contains("lowPercent");
     c = document.getElementById("lowpercentc").classList.contains("lowPercent");
@@ -145,64 +144,11 @@ function playAudio(){
     x = document.getElementById("highpercentx").classList.contains("highPercent");
     y = document.getElementById("highpercenty").classList.contains("highPercent");
     z = document.getElementById("highpercentz").classList.contains("highPercent");
-    if(a == true){
+    if(a == true || b == true || c == true || d == true || e == true){
         lowPercent.play();
-    }
-    if(b == true){
-        lowPercent.play();
-    }
-    if(c == true){
-        lowPercent.play();
-    }
-    if(d == true){
-        lowPercent.play();
-    }
-    if(e == true){
-        lowPercent.play();
-    }
-    if(f == true){
+    }else if(f == true || g == true || h == true || j == true || k == true || l == true || m == true || n == true || o == true){
         midPercent.play();
-    }
-    if(g == true){
-        midPercent.play();
-    }
-    if(h == true){
-        midPercent.play();
-    }
-    if(j == true){
-        midPercent.play();
-    }
-    if(k == true){
-        midPercent.play();
-    }
-    if(l == true){
-        midPercent.play();
-    }
-    if(m == true){
-        midPercent.play();
-    }
-    if(n == true){
-        midPercent.play();
-    }
-    if(o == true){
-        midPercent.play();
-    }
-    if(p == true){
-        highPercent.play();
-    }
-    if(q == true){
-        highPercent.play();
-    }
-    if(r == true){
-        highPercent.play();
-    }
-    if(x == true){
-        highPercent.play();
-    }
-    if(y == true){
-        highPercent.play();
-    }
-    if(z == true){
+    }else if(p == true || q == true || r == true || x == true || y == true || z == true){
         highPercent.play();
     }
 }
