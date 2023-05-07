@@ -124,31 +124,13 @@ class Heart {
 
 }
 function playAudio(){
-    a = document.getElementById("lowpercenta").classList.contains("lowPercent");
-    b = document.getElementById("lowpercentb").classList.contains("lowPercent");
-    c = document.getElementById("lowpercentc").classList.contains("lowPercent");
-    d = document.getElementById("lowpercentd").classList.contains("lowPercent");
-    e = document.getElementById("lowpercente").classList.contains("lowPercent");
-    f = document.getElementById("midpercentf").classList.contains("midPercent");
-    g = document.getElementById("midpercentg").classList.contains("midPercent");
-    h = document.getElementById("midpercenth").classList.contains("midPercent");
-    j = document.getElementById("midpercentj").classList.contains("midPercent");
-    k = document.getElementById("midpercentk").classList.contains("midPercent");
-    l = document.getElementById("midpercentl").classList.contains("midPercent");
-    m = document.getElementById("midpercentm").classList.contains("midPercent");
-    n = document.getElementById("midpercentn").classList.contains("midPercent");
-    o = document.getElementById("midpercento").classList.contains("midPercent");
     p = document.getElementById("highpercentp").classList.contains("highPercent");
     q = document.getElementById("highpercentq").classList.contains("highPercent");
     r = document.getElementById("highpercentr").classList.contains("highPercent");
     x = document.getElementById("highpercentx").classList.contains("highPercent");
     y = document.getElementById("highpercenty").classList.contains("highPercent");
     z = document.getElementById("highpercentz").classList.contains("highPercent");
-    if(a == true || b == true || c == true || d == true || e == true){
-        lowPercent.play();
-    }else if(f == true || g == true || h == true || j == true || k == true || l == true || m == true || n == true || o == true){
-        midPercent.play();
-    }else if(p == true || q == true || r == true || x == true || y == true || z == true){
+    if(p == true || q == true || r == true || x == true || y == true || z == true){
         highPercent.play();
     }
 }
