@@ -135,5 +135,5 @@ class Spiral {
     }
 }
 function hideButton(){
-    
+    document.getElementById('button1').style.visibility = 'hidden';
 }
