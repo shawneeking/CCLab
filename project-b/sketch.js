@@ -2,41 +2,53 @@ let startSketch = false;
 let heart;
 let counter;
 let scene;
+let confettis = [];
+let numConfettis = 100;
 let color = 0;
 let myButton = document.getElementById('button1');
 let capybara = document.getElementById('capybaraPic');
 let loadingSound;
 let okIPullUp;
+let ding;
+let angle = 0;
+let strokeAge = 4;
+let seeResult = false;
 function preload() {
     okIPullUp = loadSound("sounds/OKIPULLUP.mp3");
     loadingSound = loadSound("sounds/GangnamStyleMemeSound.mp3");
+    ding = loadSound("sounds/donesound.mp3");
 }
 function setup() {
 
     let cnv = createCanvas(1495, 715);
     cnv.parent("canvasContainer");
-    background(255);
+    background(0);
     heart = new Heart(610, 150);
-    spiral = new Spiral(width / 2, height / 2);
     heart.display();
 }
 function draw() {
-
     if (startSketch == true) {
-
-        spiral.display();
-        spiral.update();
-        heart.display();
-       
+        background(0);
         textFont('Comic Neue');
         textSize(40);
-
+        heart.display();
         if (counter < 5) {
+            for (let i = 15; i < 1000; i += 5) {
+                push();
+                translate(760, 310);
+                rotate(i + angle * 2);
+                noFill();
+                strokeWeight(strokeAge);
+                stroke(255, 195, i - 200);
+                ellipseMode(CENTER);
+                ellipse(0, 0, i + 50, i + 10);
+                pop();
+                angle += 0.0001;
+            }
+            heart.display();
             textAlign(LEFT);
             text("loading", 670, 310);
-
             fill(0);
-
             if (scene >= 0) {
                 circle(810, 310, 5);
             }
@@ -51,35 +63,30 @@ function draw() {
                 counter += 1;
             }
         }
+        strokeAge -= 0.01;
         scene += 1;
         if (scene > 100) {
             textAlign(CENTER);
+            seeResult = true;
             text("calculation complete", 725, 250, 70, 140);
-            document.getElementById("resultLink").style.visibility = "visible";
-            document.getElementsByClassName("myDiv2").style.visibility = "visible";
             document.getElementById('capybaraPic').classList.remove("rotate");
-            for (let i = 1; i < 21; i++) {
-                document.getElementById('show' + i).classList.remove('rotate2');
+            document.getElementById("resultLink").style.visibility = "visible";
+        }
+        if (scene == 95) {
+            ding.play();
+        }
+        if (scene == 100) {
+            for (let i = 0; i < numConfettis; i++) {
+                confettis.push(new Confetti(760, 310));
             }
         }
-    }
-}
-function start() {
-    startSketch = true;
-    loadingSound.play();
-    counter = 0;
-    scene = 0;
- 
-}
-function rotateImages() {
-    document.getElementById('capybaraPic').classList.add("rotate");
-    for (let i = 1; i < 21; i++) {
-        document.getElementById('show' + i).classList.add('rotate2');
+        for (let i = 0; i < confettis.length; i++) {
+            confettis[i].display();
+            confettis[i].move();
+        }
     }
 
-}
-function playAudio() {
-    okIPullUp.play();
+
 }
 class Heart {
     constructor(startX, startY) {
@@ -87,7 +94,6 @@ class Heart {
         this.y = startY;
     }
     display() {
-
         push();
         fill(255, 0, 0);
         translate(this.x, this.y);
@@ -109,31 +115,48 @@ class Heart {
         endShape();
         pop();
     }
-
 }
-class Spiral {
+class Confetti {
     constructor(startX, startY) {
         this.x = startX;
         this.y = startY;
-        this.age = 0;
-        this.angle = 0;
+        this.xSpeed = random(-10, 10);
+        this.ySpeed = random(-6, -3);
+        this.size = random(2, 10);
+    }
+    move() {
+        this.x += this.xSpeed;
+        this.y += this.ySpeed;
+        this.ySpeed += 0.1;
+        this.xSpeed = this.xSpeed * 0.99;
     }
     display() {
-
-        for (let i = 15; i < 500; i += 5) {
-            push();
-            translate(this.x, this.y);
-            rotate(i + 2 * this.angle);
-            stroke(255, 195, i - 200);
-            ellipse(0, 0, i + 15, i);
-            pop();
-        }
-
-    }
-    update() {
-        this.angle += 0.0001
+        push();
+        translate(this.x, this.y);
+        noStroke();
+        fill(255, 105, 180);
+        circle(0, 0, this.size);
+        pop();
     }
 }
-function hideButton(){
+function hideButton() {
     document.getElementById('button1').style.visibility = 'hidden';
+    document.getElementById('myselection').style.visibility = 'hidden';
+}
+function rotateImages() {
+    document.getElementById('capybaraPic').classList.add("rotate");
+    for (let i = 1; i < 21; i++) {
+        document.getElementById('show' + i).classList.add('rotate2');
+    }
+}
+function playAudio() {
+    okIPullUp.play();
+}
+function start() {
+    startSketch = true;
+    loadingSound.play();
+    counter = 0;
+    scene = 0;
+   // document.getElementsByClassName("myDiv2").style.visibility = "visible";
+    
 }

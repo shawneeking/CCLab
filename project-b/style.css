@@ -3,7 +3,9 @@
     padding: 0px;
     scroll-behavior: smooth;
 }
-
+body{
+    background-color: hotpink;
+}
 .heading {
     margin-top: 0px;
     text-align: center;
@@ -77,6 +79,8 @@
 }
 
 .images {
+    border-color: black;
+    border-style: dashed;
     width: 400px;
     height: 267px;
 }
@@ -103,6 +107,8 @@
 .myDiv {
     display: none;
     position: absolute;
+    border-style: dashed;
+    border-color: hotpink;
     margin-left: 67%;
     margin-top: 10%;
 }
@@ -151,8 +157,13 @@
 }
 
 .resultP {
-    top: 0;
+    width: 80%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
+    background-color: white;
 }
 
 a:link {
@@ -174,9 +185,15 @@ a:active {
 .cyan {
     color: cyan;
 }
+.cyan2{
+    background-color: cyan;
+}
 
 .yellow {
     color: gold;
+}
+.yellow2{
+    background-color: gold;
 }
 
 .navy {
@@ -195,12 +212,44 @@ a:active {
 .red{
     background-color: red;
 }
-
-.animate.left{
+.red2{
+    color: red;
+}
+.black{
+    background-color: black;
+}
+.gray{
+    background-color: gray;
+}
+.CapyPic{
     display: inline-block;
+    border-color: hotpink;
+    border-style: dashed;
     position: absolute;
     width: 400px;
     transition: all 0.5s ease;
     left: 5%;
     top: 25%;
+}
+.clickResult{
+    color: white;
+}
+.navy2{
+    background-color: navy;
+}
+.green{
+    color: green;
+}
+.loveColor{
+    background-color: #D01760;
+}
+.dogColor{
+    background-color: #720fff;
+}
+.purple{
+    color: purple;
+}
+.CCP{
+    margin-bottom: 10px;
+    font-size: 40px;
 }
