@@ -1,11 +1,11 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
+* {
+    margin: 0px;
+    padding: 0px;
     scroll-behavior: smooth;
 }
 
 .heading {
+    margin-top: 0px;
     text-align: center;
     font-family: 'Comic Neue';
     font-size: 80px;
@@ -18,8 +18,11 @@ body {
 }
 
 #Header {
+    margin-top: 0px;
+    padding-top: 120px;
     width: 100%;
     height: 100vh;
+
 }
 
 .paragraph {
@@ -103,48 +106,101 @@ body {
     margin-left: 67%;
     margin-top: 10%;
 }
-.myDiv img{
+
+.myDiv img {
     display: inline-block;
 }
-#capybaraPic {
-    display: inline-block;
-    position: absolute;
-    width: 400px;
-    top: 25%;
-    left: 5%;
-}
-#results{
+
+#results {
     position: relative;
     width: 100%;
     height: 100vh;
 }
-.myDiv2{
+
+.myDiv2 {
     position: absolute;
     left: 37%;
 }
-#resultLink{
+
+#resultLink {
     visibility: hidden;
     height: 20vh;
     left: 50%;
 }
-#selectBox{
+
+#selectBox {
     display: inline-block;
 }
-.rotate{
-   animation: rotation 8.5s 0s linear;
-   transition: 2s;
-   -webkit-transition: 2s;
-   -moz-transition: 2s;
+
+.rotate {
+    animation: rotation 8.5s 0s linear;
 }
-@keyframes rotation{
-    from{
+
+.rotate2 {
+    animation: rotation 8.5s 0s reverse;
+}
+
+@keyframes rotation {
+    from {
         transform: rotate(0deg);
     }
-    to{
-        transform: rotate(740deg);
+
+    to {
+        transform: rotate(720deg);
     }
 }
-.resultP{
+
+.resultP {
     top: 0;
     text-align: center;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: gold;
+}
+
+a:hover {
+    color: cyan;
+}
+
+a:active {
+    color: black;
+}
+
+.cyan {
+    color: cyan;
+}
+
+.yellow {
+    color: gold;
+}
+
+.navy {
+    color: navy;
+}
+
+.white {
+    color: white;
+}
+.hotpink{
+    background-color: hotpink;
+}
+.lightpink{
+    background-color: lightpink;
+}
+.red{
+    background-color: red;
+}
+
+.animate.left{
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+    transition: all 0.5s ease;
+    left: 5%;
+    top: 25%;
 }

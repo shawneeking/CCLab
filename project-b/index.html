@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capybara Compatibility Calculator</title>
+  <title>capybara compatibility calculator</title>
   <link rel="stylesheet" href="style.css">
   <script src="p5-template/p5.js"></script>
   <script src="p5-template/p5.sound.js"></script>
@@ -16,239 +16,265 @@
 </head>
 
 <body>
-  <div id="Header">
-    <h1 class="heading">hello and welcome to the ccc!</h1>
-    <h2 class="heading2">aka the capybara compatibility calculator!</h2>
-    <p class="paragraph">this is where you can see capybaras with everything elsethis is where you can see capybaras
-      with
-      everything elsethis is where you can see capybaras with everything elsethis is where you can see capybaras with
-      everything elsethis is where you can see capybaras with everything else </p>
-    <p class="paragraph">Click <a href="#canvasContainer">here</a> to go down</p>
+  <div id="Header" class="hotpink">
+
+    <h1 class="heading">hello and welcome to the <span class="cyan">c</span><span class="yellow">c</span><span class="navy">c</span><span class="white">!</span></h1> 
+    <h2 class="heading2">aka the <span class="cyan">capybara</span> <span class="yellow">compatibility</span> <span class="navy">calculator</span><span class="white">!</span></h2>
+    <p class="paragraph">after blowing up and recently becoming a meme in 2021, capybaras have fascinated the world.
+      they are not only adorable and super cute, but also one of the chillest animals on planet earth.
+      known to be the largest rodent on earth, capybaras have almost no natural enemies and have evolved to be at peace
+      with the world around them. during the comeup of the capybara, pictures of capybaras simply chilling with other
+      animals have become commonplace.
+      this capybaray compatibility calculator will help you see these combinations of capybaras and everything else, as
+      well as how much they be vibing together. this calculator is 100% correct and is most definitely not an opinion.
+    </p>
+    <p class="paragraph">click <a href="#canvasContainer">here</a> to start calculating</p>
   </div>
   <div class="wrapper">
 
     <div id="canvasContainer">
       <script class="p5" src="sketch.js"></script>
-      <button id="button1" onclick="start();rotateImages()">click to see compatibility</button>
-      <img id="capybaraPic" class="" src="capybaras/capybara.jpg" alt="">
+      <button id="button1" onclick="start();rotateImages();">click to see compatibility</button>
+      <img id="capybaraPic" class="animate left" src="capybaras/capybara.jpg" alt="">
 
       <select id="myselection">
         <optgroup id="selectBox">
-          <option value="None">check their compatibility!</option>
-          <option value="Anteater">anteater</option>
-          <option value="Monkey">monkey</option>
-          <option value="Cat">cat</option>
-          <option value="Oranges">oranges</option>
-          <option value="Crocodile">crocodile</option>
-          <option value="Rabbit">rabbit</option>
-          <option value="Butterfly">butterfly</option>
-          <option value="Batman">batman</option>
-          <option value="BabyGoat">baby goat</option>
-          <option value="Turtles">turtles</option>
-          <option value="Potato">potato</option>
-          <option value="CarSeat">car seat</option>
-          <option value="Turkey">turkey</option>
-          <option value="Bird">bird</option>
-          <option value="Watermelon">watermelon</option>
-          <option value="Rat">rat</option>
-          <option value="Pelican">pelican</option>
-          <option value="Deer">deer</option>
-          <option value="Dog">dog</option>
-          <option value="BabyCapybaras">baby capybaras</option>
+          <option>check their compatibility!</option>
+          <option value="1">anteater</option>
+          <option value="2">monkey</option>
+          <option value="3">cat</option>
+          <option value="4">oranges</option>
+          <option value="5">crocodile</option>
+          <option value="6">rabbit</option>
+          <option value="7">butterfly</option>
+          <option value="8">batman</option>
+          <option value="9">baby goat</option>
+          <option value="10">turtles</option>
+          <option value="11">potato</option>
+          <option value="12">car seat</option>
+          <option value="13">turkey</option>
+          <option value="14">bird</option>
+          <option value="15">watermelon</option>
+          <option value="16">rat</option>
+          <option value="17">pelican</option>
+          <option value="18">deer</option>
+          <option value="19">dog</option>
+          <option value="20">baby capybaras</option>
         </optgroup>
       </select>
-      <div id="showAnteater" class="myDiv">
+      <div id="show1" class="myDiv">
         <img class="images" src="capybaras/anteater.jpg" alt="" />
       </div>
-      <div id="showMonkey" class="myDiv">
+      <div id="show2" class="myDiv">
         <img class="images" src="capybaras/monkey.jpg" alt="" />
       </div>
-      <div id="showCat" class="myDiv">
+      <div id="show3" class="myDiv">
         <img class="images" src="capybaras/cat.jpg" alt="" />
       </div>
-      <div id="showOranges" class="myDiv">
+      <div id="show4" class="myDiv">
         <img class="images" src="capybaras/oranges.jpg" alt="" />
       </div>
-      <div id="showCrocodile" class="myDiv">
+      <div id="show5" class="myDiv">
         <img class="images" src="capybaras/crocodile.jpg" alt="" />
       </div>
-      <div id="showRabbit" class="myDiv">
+      <div id="show6" class="myDiv">
         <img class="images" src="capybaras/rabbit.jpg" alt="" />
       </div>
-      <div id="showButterfly" class="myDiv">
+      <div id="show7" class="myDiv">
         <img class="images" src="capybaras/butterfly.jpg" alt="" />
       </div>
-      <div id="showBatman" class="myDiv">
+      <div id="show8" class="myDiv">
         <img class="images" src="capybaras/batman.webp" alt="" />
       </div>
-      <div id="showBabyGoat" class="myDiv">
+      <div id="show9" class="myDiv">
         <img class="images" src="capybaras/bbgoat.jpg" alt="" />
       </div>
-      <div id="showTurtles" class="myDiv">
+      <div id="show10" class="myDiv">
         <img class="images" src="capybaras/turtles.jpg" alt="" />
       </div>
-      <div id="showPotato" class="myDiv">
+      <div id="show11" class="myDiv">
         <img class="images" src="capybaras/potato.png" alt="" />
       </div>
-      <div id="showCarSeat" class="myDiv">
+      <div id="show12" class="myDiv">
         <img class="images" src="capybaras/carseat.jpg" alt="" />
       </div>
-      <div id="showTurkey" class="myDiv">
+      <div id="show13" class="myDiv">
         <img class="images" src="capybaras/turkey.webp" alt="" />
       </div>
-      <div id="showBird" class="myDiv">
+      <div id="show14" class="myDiv">
         <img class="images" src="capybaras/bird.jpg" alt="" />
       </div>
-      <div id="showWatermelon" class="myDiv">
+      <div id="show15" class="myDiv">
         <img class="images" src="capybaras/watermelon.webp" alt="" />
       </div>
-      <div id="showRat" class="myDiv">
+      <div id="show16" class="myDiv">
         <img class="images" src="capybaras/rat.jpg" alt="" />
       </div>
-      <div id="showPelican" class="myDiv">
+      <div id="show17" class="myDiv">
         <img class="images" src="capybaras/pelican.jpg" alt="" />
       </div>
-      <div id="showDeer" class="myDiv">
+      <div id="show18" class="myDiv">
         <img class="images" src="capybaras/deer.jpg" alt="" />
       </div>
-      <div id="showDog" class="myDiv">
+      <div id="show19" class="myDiv">
         <img class="images" src="capybaras/dog.jpg" alt="" />
       </div>
-      <div id="showBabyCapybaras" class="myDiv">
+      <div id="show20" class="myDiv">
         <img class="images" src="capybaras/babycapybaras.jpg" alt="" />
       </div>
       <script>
         $(document).ready(function () {
           $('#myselection').on('change', function () {
-            var demovalue = $(this).val();
+            var Simage = $(this).val();
             $("div.myDiv").hide();
-            $("#show" + demovalue).show();
+            $("#show" + Simage).show();
           });
         });
       </script>
     </div>
     <div id="resultLink">
-      <p class="paragraph resultP">Click <a href="#results" onclick="playAudio(); return true">here</a> to see results</p>
+      <p class="paragraph resultP">Click <a href="#results" onclick="playAudio(); return true">here</a> to see results
+      </p>
     </div>
   </div>
   <div id="results">
     <p class="paragraph resultP">compatibility tested</p>
-    <div id="showCPelican" class="myDiv2">
+    <div id="showC17" class="myDiv2 lowPercent">
       <img class="images" src="capybaras/cpelican.webp" alt="">
-      <p id="lowpercenta" class="paragraph resultP lowPercent">0%</p>
+      <p class="paragraph resultP">0%</p>
       <p class="paragraph resultP">why'd he try to eat him 😔</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCCrocodile" class="myDiv2">
+    <div id="showC5" class="myDiv2 lowPercent">
       <img class="images" src="capybaras/ccrocodile.jpg" alt="">
-      <p id="lowpercentb" class="paragraph resultP lowPercent">26%</p>
+      <p class="paragraph resultP">15%</p>
       <p class="paragraph resultP">ooooh bad match 😕</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCCarSeat" class="myDiv2">
+    <div id="showC12" class="myDiv2 lowPercent">
       <img class="images" src="capybaras/ccarseat.jpg" alt="">
-      <p id="lowpercentc" class="paragraph resultP lowPercent">31%</p>
+      <p class="paragraph resultP">26%</p>
       <p class="paragraph resultP">ooooh bad match 😕</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCTurtles" class="myDiv2">
+    <div id="showC10" class="myDiv2 lowPercent">
       <img class="images" src="capybaras/cturtle.jpg" alt="">
-      <p id="lowpercentd" class="paragraph resultP lowPercent">15%</p>
+      <p class="paragraph resultP">31%</p>
       <p class="paragraph resultP">ooooh bad match 😕</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCWatermelon" class="myDiv2">
+    <div id="showC15" class="myDiv2 midPercent">
       <img class="images" src="capybaras/cwatermelon.jpg" alt="">
-      <p id="lowpercente" class="paragraph resultP lowPercent">33%</p>
-      <p class="paragraph resultP">ooooh bad match 😕</p>
+      <p class="paragraph resultP">63%</p>
+      <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCAnteater" class="myDiv2">
+    <div id="showC1" class="myDiv2 midPercent">
       <img class="images" src="capybaras/canteater.png" alt="">
-      <p id="midpercentf" class="paragraph resultP midPercent">42%</p>
+      <p class="paragraph resultP">42%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCMonkey" class="myDiv2">
+    <div id="showC2" class="myDiv2 midPercent">
       <img class="images" src="capybaras/cmonkey.jpg" alt="">
-      <p id="midpercentg" class="paragraph resultP midPercent">45%</p>
+      <p class="paragraph resultP">45%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCCat" class="myDiv2">
+    <div id="showC3" class="myDiv2 midPercent">
       <img class="images" src="capybaras/ccat.jpg" alt="">
-      <p id="midpercenth" class="paragraph resultP midPercent">53%</p>
+      <p class="paragraph resultP">53%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCOranges" class="myDiv2">
+    <div id="showC4" class="myDiv2 midPercent">
       <img class="images" src="capybaras/coranges.jpg" alt="">
-      <p id="midpercentj" class="paragraph resultP midPercent">38%</p>
+      <p class="paragraph resultP">38%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCBabyGoat" class="myDiv2">
+    <div id="showC9" class="myDiv2 midPercent">
       <img class="images" src="capybaras/cbbgoat.jpg" alt="">
-      <p id="midpercentk" class="paragraph resultP midPercent">41%</p>
+      <p class="paragraph resultP">41%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCTurkey" class="myDiv2">
+    <div id="showC13" class="myDiv2 midPercent">
       <img class="images" src="capybaras/cturkey.jpg" alt="">
-      <p id="midpercentl" class="paragraph resultP midPercent">44%</p>
+      <p class="paragraph resultP">44%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCBird" class="myDiv2">
+    <div id="showC14" class="myDiv2 midPercent">
       <img class="images" src="capybaras/cbird.jpg" alt="">
-      <p id="midpercentm" class="paragraph resultP midPercent">50%</p>
+      <p class="paragraph resultP">50%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCRat" class="myDiv2">
+    <div id="showC16" class="myDiv2 midPercent">
       <img class="images" src="capybaras/crat.jpg" alt="">
-      <p id="midpercentn" class="paragraph resultP midPercent">59%</p>
+      <p class="paragraph resultP">59%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCDeer" class="myDiv2">
+    <div id="showC18" class="myDiv2 midPercent">
       <img class="images" src="capybaras/cdeer.jpg" alt="">
-      <p id="midpercento" class="paragraph resultP midPercent">57%</p>
+      <p class="paragraph resultP">57%</p>
       <p class="paragraph resultP">just vibing 😌</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCRabbit" class="myDiv2">
+    <div id="showC6" class="myDiv2 highPercent">
       <img class="images" src="capybaras/crabbit.jpg" alt="">
-      <p id="highpercentp" class="paragraph resultP highPercent">67%</p>
+      <p class="paragraph resultP">67%</p>
       <p class="paragraph resultP">lovely combination ❤️</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCButterfly" class="myDiv2">
+    <div id="showC7" class="myDiv2 highPercent">
       <img class="images" src="capybaras/cbutterfly.jpg" alt="">
-      <p id="highpercentq" class="paragraph resultP highPercent">70%</p>
+      <p class="paragraph resultP">70%</p>
       <p class="paragraph resultP">lovely combination ❤️</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCDog" class="myDiv2">
+    <div id="showC19" class="myDiv2 highPercent">
       <img class="images" src="capybaras/cdog.jpg_large" alt="">
-      <p id="highpercentr" class="paragraph resultP highPercent">81%</p>
+      <p class="paragraph resultP">81%</p>
       <p class="paragraph resultP">lovely combination ❤️</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCBabyCapybaras" class="myDiv2">
+    <div id="showC20" class="myDiv2 highPercent">
       <img class="images" src="capybaras/cbcapybara.jpg" alt="">
-      <p id="highpercentx" class="paragraph resultP highPercent">92%</p>
+      <p class="paragraph resultP">92%</p>
       <p class="paragraph resultP">lovely combination ❤️</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCBatman" class="myDiv2">
+    <div id="showC8" class="myDiv2 highPercent">
       <img class="images" src="capybaras/cbatman.jpg" alt="">
-      <p id="highpercenty" class="paragraph resultP highPercent">99%</p>
+      <p class="paragraph resultP">99%</p>
       <p class="paragraph resultP">capy got that dawg in him 😎</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
-    <div id="showCPotato" class="myDiv2">
+    <div id="showC11" class="myDiv2 highPercent">
       <img class="images" src="capybaras/cpotato.jpg" alt="">
-      <p id="highpercentz" class="paragraph resultP highPercent">100%</p>
+      <p class="paragraph resultP">100%</p>
       <p class="paragraph resultP">OK WE PULL UP 🥔</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
     <script>
       $(document).ready(function () {
         $("div.myDiv2").hide();
         $("p.resultP").hide();
         $('#myselection').on('change', function () {
-          var demo = $(this).val();
+          var Cimage = $(this).val();
           $("p.resultP").show();
           $("div.myDiv2").hide();
-          $("#showC" + demo).show();
+          $("#showC" + Cimage).show();
         });
       });
     </script>
 
   </div>
   <div id="linkBox">
-    <p class="paragraph">click <a href="capybara.html">here</a> to see all of my pictures!</p>
+    <p class="paragraph">click <a href="capybara.html">here</a> if you're tired of calculating!</p>
   </div>
 
 

@@ -6,34 +6,10 @@ let color = 0;
 let myButton = document.getElementById('button1');
 let capybara = document.getElementById('capybaraPic');
 let loadingSound;
-let highPercent;
-let midPercent;
-let lowPercent;
-let value;
-let a;
-let b;
-let c;
-let d;
-let e;
-let f;
-let g;
-let h;
-let j;
-let k;
-let l;
-let m;
-let o;
-let p;
-let q;
-let r;
-let x;
-let y;
-let z;
+let okIPullUp;
 function preload() {
-    highPercent = loadSound("sounds/OKIPULLUP.mp3");
+    okIPullUp = loadSound("sounds/OKIPULLUP.mp3");
     loadingSound = loadSound("sounds/GangnamStyleMemeSound.mp3");
-    midPercent = loadSound("sounds/CapybaraSong.mp3");
-    lowPercent = loadSound("sounds/SpongebobFailSoundEffect.mp3");
 }
 function setup() {
 
@@ -41,13 +17,17 @@ function setup() {
     cnv.parent("canvasContainer");
     background(255);
     heart = new Heart(610, 150);
+    spiral = new Spiral(width / 2, height / 2);
     heart.display();
 }
 function draw() {
+
     if (startSketch == true) {
 
-        background(255);
+        spiral.display();
+        spiral.update();
         heart.display();
+       
         textFont('Comic Neue');
         textSize(40);
 
@@ -76,8 +56,11 @@ function draw() {
             textAlign(CENTER);
             text("calculation complete", 725, 250, 70, 140);
             document.getElementById("resultLink").style.visibility = "visible";
-            const list = document.getElementById('capybaraPic').classList;
-            list.remove("rotate");
+            document.getElementsByClassName("myDiv2").style.visibility = "visible";
+            document.getElementById('capybaraPic').classList.remove("rotate");
+            for (let i = 1; i < 21; i++) {
+                document.getElementById('show' + i).classList.remove('rotate2');
+            }
         }
     }
 }
@@ -86,12 +69,17 @@ function start() {
     loadingSound.play();
     counter = 0;
     scene = 0;
-
-
+ 
 }
 function rotateImages() {
-    const list = document.getElementById('capybaraPic').classList;
-    list.add("rotate");
+    document.getElementById('capybaraPic').classList.add("rotate");
+    for (let i = 1; i < 21; i++) {
+        document.getElementById('show' + i).classList.add('rotate2');
+    }
+
+}
+function playAudio() {
+    okIPullUp.play();
 }
 class Heart {
     constructor(startX, startY) {
@@ -123,14 +111,29 @@ class Heart {
     }
 
 }
-function playAudio(){
-    p = document.getElementById("highpercentp").classList.contains("highPercent");
-    q = document.getElementById("highpercentq").classList.contains("highPercent");
-    r = document.getElementById("highpercentr").classList.contains("highPercent");
-    x = document.getElementById("highpercentx").classList.contains("highPercent");
-    y = document.getElementById("highpercenty").classList.contains("highPercent");
-    z = document.getElementById("highpercentz").classList.contains("highPercent");
-    if(p == true || q == true || r == true || x == true || y == true || z == true){
-        highPercent.play();
+class Spiral {
+    constructor(startX, startY) {
+        this.x = startX;
+        this.y = startY;
+        this.age = 0;
+        this.angle = 0;
     }
+    display() {
+
+        for (let i = 15; i < 500; i += 5) {
+            push();
+            translate(this.x, this.y);
+            rotate(i + 2 * this.angle);
+            stroke(255, 195, i - 200);
+            ellipse(0, 0, i + 15, i);
+            pop();
+        }
+
+    }
+    update() {
+        this.angle += 0.0001
+    }
+}
+function hideButton(){
+    
 }
