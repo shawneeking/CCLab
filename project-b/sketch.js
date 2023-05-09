@@ -5,6 +5,7 @@ let scene;
 let confettis = [];
 let numConfettis = 100;
 let color = 0;
+let spiral;
 let myButton = document.getElementById('button1');
 let capybara = document.getElementById('capybaraPic');
 let loadingSound;
@@ -13,6 +14,7 @@ let ding;
 let angle = 0;
 let strokeAge = 4;
 let seeResult = false;
+
 function preload() {
     okIPullUp = loadSound("sounds/OKIPULLUP.mp3");
     loadingSound = loadSound("sounds/GangnamStyleMemeSound.mp3");
@@ -25,6 +27,7 @@ function setup() {
     background(0);
     heart = new Heart(610, 150);
     heart.display();
+    spiral = new Spiral(760,310);
 }
 function draw() {
     if (startSketch == true) {
@@ -33,18 +36,8 @@ function draw() {
         textSize(40);
         heart.display();
         if (counter < 5) {
-            for (let i = 15; i < 1000; i += 5) {
-                push();
-                translate(760, 310);
-                rotate(i + angle * 2);
-                noFill();
-                strokeWeight(strokeAge);
-                stroke(255, 195, i - 200);
-                ellipseMode(CENTER);
-                ellipse(0, 0, i + 50, i + 10);
-                pop();
-                angle += 0.0001;
-            }
+            spiral.display();
+            spiral.update();
             heart.display();
             textAlign(LEFT);
             text("loading", 670, 310);
@@ -63,7 +56,6 @@ function draw() {
                 counter += 1;
             }
         }
-        strokeAge -= 0.01;
         scene += 1;
         if (scene > 100) {
             textAlign(CENTER);
@@ -139,6 +131,31 @@ class Confetti {
         pop();
     }
 }
+class Spiral {
+    constructor(startX, startY){
+        this.x = startX;
+        this.y = startY;
+        this.angle = 0;
+        this.stroke = 4;
+    }
+    display(){
+        push();
+            translate(this.x, this.y);
+        for (let i = 0; i < 1000; i += 5) {
+            noFill();
+            stroke(255, 195, i - 200);
+            ellipseMode(CENTER);
+            strokeWeight(this.stroke);
+            ellipse(0, 0, i + 50, i + 10);
+            rotate(i + this.angle * 2);
+        }
+        pop();
+    }
+    update(){
+        this.angle += 0.0001;
+        this.stroke = this.stroke - 0.001;
+    }
+}
 function hideButton() {
     document.getElementById('button1').style.visibility = 'hidden';
     document.getElementById('myselection').style.visibility = 'hidden';
@@ -159,4 +176,7 @@ function start() {
     scene = 0;
    // document.getElementsByClassName("myDiv2").style.visibility = "visible";
     
+}
+function disableScroll(){
+    document.getElementById('wrapper').classList.add('stopScrolling');
 }

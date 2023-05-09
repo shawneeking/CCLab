@@ -38,10 +38,12 @@ body{
 }
 
 #canvasContainer {
+
     position: relative;
     width: 100%;
     height: 80vh;
     margin: auto;
+    margin-top: 40px;
     display: inline-block;
     /* max-width: 1200px; */
 }
@@ -139,11 +141,11 @@ body{
 }
 
 .rotate {
-    animation: rotation 8.5s 0s linear;
+    animation: rotation 8.7s 0s linear;
 }
 
 .rotate2 {
-    animation: rotation 8.5s 0s reverse;
+    animation: rotation2 8.7s 0s linear;
 }
 
 @keyframes rotation {
@@ -153,6 +155,15 @@ body{
 
     to {
         transform: rotate(720deg);
+    }
+}
+@keyframes rotation2 {
+    from {
+        transform: rotate(720deg);
+    }
+
+    to {
+        transform: rotate(0deg);
     }
 }
 
@@ -192,6 +203,9 @@ a:active {
 .yellow {
     color: gold;
 }
+.orangered{
+    color: orangered;
+}
 .yellow2{
     background-color: gold;
 }
@@ -218,8 +232,14 @@ a:active {
 .black{
     background-color: black;
 }
+.black2{
+    color: black;
+}
 .gray{
     background-color: gray;
+}
+.skyblue{
+    background-color: skyblue;
 }
 .CapyPic{
     display: inline-block;
@@ -230,9 +250,6 @@ a:active {
     transition: all 0.5s ease;
     left: 5%;
     top: 25%;
-}
-.clickResult{
-    color: white;
 }
 .navy2{
     background-color: navy;
@@ -253,3 +270,7 @@ a:active {
     margin-bottom: 10px;
     font-size: 40px;
 }
+.stopScrolling {
+    height: 100% !important; 
+    overflow: hidden !important;
+    }
