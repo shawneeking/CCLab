@@ -270,7 +270,3 @@ a:active {
     margin-bottom: 10px;
     font-size: 40px;
 }
-.stopScrolling {
-    height: 100% !important; 
-    overflow: hidden !important;
-    }

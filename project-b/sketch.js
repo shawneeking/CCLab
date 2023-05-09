@@ -177,6 +177,3 @@ function start() {
    // document.getElementsByClassName("myDiv2").style.visibility = "visible";
     
 }
-function disableScroll(){
-    document.getElementById('wrapper').classList.add('stopScrolling');
-}
