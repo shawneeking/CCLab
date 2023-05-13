@@ -264,15 +264,17 @@
       <p class="paragraph resultP loveColor"><span class="cyan">1</span><span class="yellow">0</span><span
           class="navy">0</span>%<span class="cyan">!</span><span class="yellow">!</span><span class="navy">!</span></p>
       <p class="paragraph resultP black white">OK WE PULL UP 🥔</p>
-      <p class="paragraph">click <a href="index.html#wrapper">here</a> to go again</p>
+      <p class="paragraph">click <a href="index.html">here</a> to go again</p>
     </div>
     <script>
       $(document).ready(function () {
         $("div.myDiv2").hide();
         $("p.resultP").hide();
+        $('#button1').hide();
         $('#myselection').on('change', function () {
           var Cimage = $(this).val();
           $("p.resultP").show();
+          $('#button1').show();
           $("div.myDiv2").hide();
           $("#showC" + Cimage).show();
         });
